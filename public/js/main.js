@@ -1,5 +1,6 @@
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
+const BotInfo = document.querySelector('.bot-message');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
@@ -51,18 +52,46 @@ chatForm.addEventListener('submit', (e) => {
 
 // Output message to DOM
 function outputMessage(message) {
+if(message.username=="SimpleChat Bot"){
+  // const div=document.createElement('div');
+  // const p = document.createElement('p');
+  // p.classList.add('bot');
+  // p.innerText = message.text;
+  // div.appendChild(p);
+
+  // document.querySelector('.bot-message').appendChild(div);
+  console.log("bot");
+}else{
+  const divmain=document.createElement('div');
+  divmain.classList.add('message-container');
+  
+  const avatar = document.createElement('img');
+  avatar.classList.add('message-avatar');
+  avatar.src="../img/defual-avatar.jpg";
+  divmain.appendChild(avatar);
+
+  
   const div = document.createElement('div');
   div.classList.add('message');
   const p = document.createElement('p');
   p.classList.add('meta');
   p.innerText = message.username;
-  p.innerHTML += `<span>${message.time}</span>`;
   div.appendChild(p);
+
+
   const para = document.createElement('p');
-  para.classList.add('text');
+  para.classList.add('message-text');
   para.innerText = message.text;
   div.appendChild(para);
-  document.querySelector('.chat-messages').appendChild(div);
+
+  const time= document.createElement('div');
+  time.classList.add('message-time');
+  time.innerText = message.time;
+  div.appendChild(time);
+  
+  divmain.appendChild(div);
+  document.querySelector('.chat-messages').appendChild(divmain);
+  }
 }
 
 // Add room name to DOM
