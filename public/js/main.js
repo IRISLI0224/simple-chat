@@ -1,8 +1,11 @@
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
+const chatMessagesOther = document.querySelector('.messages-container-other');
 const BotInfo = document.querySelector('.bot-message');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
+
+
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -23,7 +26,12 @@ socket.on('roomUsers', ({ room, users }) => {
 // Message from server
 socket.on('message', (message) => {
   console.log(message);
-  outputMessage(message);
+  //const user = getCurrentUser(socket.id);
+  //console.log(user,"   ",message.username)
+  //if (message.username==user){
+    outputMessage(message);
+  //}
+  
 
   // Scroll down
   chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -45,6 +53,8 @@ chatForm.addEventListener('submit', (e) => {
   // Emit message to server
   socket.emit('chatMessage', msg);
 
+  //console.log(msg);
+
   // Clear input
   e.target.elements.msg.value = '';
   e.target.elements.msg.focus();
@@ -61,7 +71,8 @@ if(message.username=="SimpleChat Bot"){
 
   // document.querySelector('.bot-message').appendChild(div);
   console.log("bot");
-}else{
+}else if (message.username==username){
+  
   const divmain=document.createElement('div');
   divmain.classList.add('message-container');
   
@@ -91,6 +102,36 @@ if(message.username=="SimpleChat Bot"){
   
   divmain.appendChild(div);
   document.querySelector('.chat-messages').appendChild(divmain);
+  }else{
+    const divmain=document.createElement('div');
+    divmain.classList.add('message-container-other');
+    
+    const avatar = document.createElement('img');
+    avatar.classList.add('message-avatar-other');
+    avatar.src="../img/defual-avatar.jpg";
+    divmain.appendChild(avatar);
+  
+    
+    const div = document.createElement('div');
+    div.classList.add('message-other');
+    const p = document.createElement('p');
+    p.classList.add('meta-other');
+    p.innerText = message.username;
+    div.appendChild(p);
+  
+  
+    const para = document.createElement('p');
+    para.classList.add('message-text-other');
+    para.innerText = message.text;
+    div.appendChild(para);
+  
+    const time= document.createElement('div');
+    time.classList.add('message-time-other');
+    time.innerText = message.time;
+    div.appendChild(time);
+    
+    divmain.appendChild(div);
+    document.querySelector('.chat-messages-other').appendChild(divmain);
   }
 }
 

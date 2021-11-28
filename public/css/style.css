@@ -121,6 +121,8 @@ a {
     color: #767676;
 }
 
+/*your message*/
+
 .chat-messages {
 	position: relative;
     background: #f2f2f2;
@@ -130,7 +132,7 @@ a {
     float: right;
     text-align: left;
 	margin-right:80px;
-	
+	margin-bottom:20px;
 }
 
 
@@ -219,6 +221,117 @@ a {
 	height: 40px;
 	flex: 1;
 }
+
+
+/*other's chat*/
+
+.chat-messages-other {
+	position: relative;
+    background: #f2f2f2;
+    border-radius: .4em;
+    width: 500px;
+    padding: 20px;
+    float: left;
+    text-align: left;
+	margin-left:80px;
+	margin-bottom:20px;
+}
+
+
+.messages-container-other{
+	position: relative;
+    background: #f2f2f2;
+    border-radius: .4em;
+    width: 500px;
+    padding: 20px;
+    float: left;
+    text-align: left;
+	margin-left:80px;
+	margin-bottom:20px;
+}
+.message-avatar-other{
+	border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: 1px #dce0e0 solid;
+	float:left;
+	margin-top:-30px;
+	margin-left:-90px;
+}
+
+
+.chat-messages-other .message-other {
+	padding: 10px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+
+.chat-messages-other .message .meta-other {
+	font-size: 15px;
+	font-weight: bold;
+	color: var(--dark-color-b);
+	opacity: 0.7;
+	margin-bottom: 7px;
+	
+}
+
+.chat-messages-other::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right-color: #f2f2f2;
+    border-top: 0;
+    margin-top: 0px;
+    margin-left: -35px;
+
+}
+
+.message-time-other{
+	font-size: 16px;
+    color: #767676;
+}
+
+.message-text-other{
+	position: relative;
+    width:530px;
+    border-radius: .4em;
+	padding-bottom: 20px;
+}
+
+
+.chat-messages .message .meta span {
+	color: #777;
+	margin-top:30px;
+}
+
+.chat-form-container {
+	padding: 20px 30px;
+	background-color: var(--dark-color-a);
+	position: relative;
+    background: #f2f2f2;
+    border-radius: .4em;
+    padding: 20px;
+    float: right;
+    text-align: left;
+	width:1100px;
+}
+
+.chat-form-container-other form {
+	display: flex;
+}
+
+.chat-form-container-other input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	flex: 1;
+}
+
+
 
 /* Join Page */
 .join-container {
