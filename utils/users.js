@@ -11,6 +11,7 @@ function userJoin(id, username, room) {
 
 // Get current user
 function getCurrentUser(id) {
+ // console.log(id)
   return users.find(user => user.id === id);
 }
 
