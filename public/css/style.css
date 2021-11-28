@@ -42,6 +42,20 @@ a {
 	color: #333333;
 }
 
+.btn-leave{
+	height: 40px;
+    border: #333333 1px solid;
+    text-align: center;
+    border-radius: 3px;
+    padding-left: 30px;
+    padding-right: 30px;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: white;
+	color: #333333;
+	line-height: 30px;
+}
+
 /* Chat Page */
 
 .chat-container {
@@ -124,6 +138,11 @@ a {
 /*your message*/
 
 .chat-messages {
+
+}
+
+
+.message-container{
 	position: relative;
     background: #f2f2f2;
     border-radius: .4em;
@@ -134,11 +153,6 @@ a {
 	margin-right:80px;
 	margin-bottom:20px;
 }
-
-
-.message-container{
-	    display: table-row;
-}
 .message-avatar{
 	border-radius: 50%;
     width: 60px;
@@ -146,6 +160,7 @@ a {
     border: 1px #dce0e0 solid;
 	float:right;
 	margin-top:-30px;
+	margin-right:-95px;
 }
 
 .bot-message{
@@ -166,7 +181,7 @@ a {
 	
 }
 
-.chat-messages::after {
+.message-container::after {
     content: '';
     position: absolute;
     right: 0;
@@ -226,6 +241,11 @@ a {
 /*other's chat*/
 
 .chat-messages-other {
+
+}
+
+
+.message-container-other{
 	position: relative;
     background: #f2f2f2;
     border-radius: .4em;
@@ -237,18 +257,6 @@ a {
 	margin-bottom:20px;
 }
 
-
-.messages-container-other{
-	position: relative;
-    background: #f2f2f2;
-    border-radius: .4em;
-    width: 500px;
-    padding: 20px;
-    float: left;
-    text-align: left;
-	margin-left:80px;
-	margin-bottom:20px;
-}
 .message-avatar-other{
 	border-radius: 50%;
     width: 60px;
@@ -275,7 +283,7 @@ a {
 	
 }
 
-.chat-messages-other::after {
+.message-container-other::after {
     content: '';
     position: absolute;
     left: 0;
