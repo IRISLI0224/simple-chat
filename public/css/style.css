@@ -59,7 +59,7 @@ a {
 /* Chat Page */
 
 .chat-container {
-	max-width: 1100px;
+	max-width: 1000px;
 	background: #fff;
 	margin: 30px auto;
 	overflow: hidden;
@@ -137,21 +137,19 @@ a {
 
 /*your message*/
 
-.chat-messages {
 
-}
 
 
 .message-container{
 	position: relative;
     background: #f2f2f2;
     border-radius: .4em;
-    width: 500px;
+    width: 75%;
     padding: 20px;
     float: right;
     text-align: left;
-	margin-right:80px;
-	margin-bottom:20px;
+    margin-right: 80px;
+    margin-bottom: 20px;
 }
 .message-avatar{
 	border-radius: 50%;
@@ -223,7 +221,7 @@ a {
     padding: 20px;
     float: right;
     text-align: left;
-	width:1100px;
+	
 }
 
 .chat-form-container form {
@@ -240,16 +238,14 @@ a {
 
 /*other's chat*/
 
-.chat-messages-other {
 
-}
 
 
 .message-container-other{
 	position: relative;
     background: #f2f2f2;
     border-radius: .4em;
-    width: 500px;
+    width: 75%;
     padding: 20px;
     float: left;
     text-align: left;
@@ -301,6 +297,7 @@ a {
 .message-time-other{
 	font-size: 16px;
     color: #767676;
+	margin-bottom:20px;
 }
 
 .message-text-other{
@@ -325,7 +322,7 @@ a {
     padding: 20px;
     float: right;
     text-align: left;
-	width:1100px;
+	width:100%;
 }
 
 .chat-form-container-other form {
@@ -401,4 +398,25 @@ a {
 	.chat-sidebar {
 		display: none;
 	}
+}
+
+.avatar-panel{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: stretch;
+
+}
+
+.avatar{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: 1px #dce0e0 solid;
+    margin-top: -30px;
+    margin: 0;
+    text-align: center;
+
 }

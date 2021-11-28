@@ -102,7 +102,7 @@ if(message.username=="SimpleChat Bot"){
   
   divmain.appendChild(div);
   document.querySelector('.chat-messages').appendChild(divmain);
-  
+
   }else{
     const divmain=document.createElement('div');
     divmain.classList.add('message-container-other');

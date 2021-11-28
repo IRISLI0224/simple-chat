@@ -19,6 +19,11 @@
 				<h1><i class="fas "></i> SimpleChat</h1>
 			</header>
 			<main class="join-main">
+				<div class="avatar-panel">
+				<img src="./img/defual-avatar.jpg" height="200" alt="Image preview..." class="avatar">
+				 <!--<input type="file" onchange="previewFile()" class="avatar-button"><br>-->
+
+			    </div>
 				<form action="chat.html">
 					<div class="form-control">
 						<label for="username">Username</label>
@@ -41,4 +46,21 @@
 			</main>
 		</div>
 	</body>
+	<script>
+		 function previewFile() {
+           var preview = document.querySelector('img');
+           var file    = document.querySelector('input[type=file]').files[0];
+          var reader  = new FileReader();
+
+        reader.onloadend = function () {
+         preview.src = reader.result;
+        }
+
+      if (file) {
+      reader.readAsDataURL(file);
+     } else {
+       preview.src = "public/img/defual-avatar.jpg";
+     }
+   }
+	</script>
 </html>
